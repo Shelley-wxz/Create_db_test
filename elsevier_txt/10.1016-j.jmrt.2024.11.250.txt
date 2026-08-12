@@ -1,0 +1,721 @@
+Title: Investigation on oxidation behavior and mechanical properties of FeCoNiNbAlCrTa high entropy alloy at 900 °C
+DOI: 10.1016/j.jmrt.2024.11.250
+Publication Name: Journal of Materials Research and Technology
+Publication Date: 2024
+
+Abstract:
+In recent years, eutectic high entropy alloys have been found to have excellent mechanical properties and corrosion resistance; however, the simultaneous achievement of these mechanical properties and high- temperature oxidation resistance still constitutes a tough challenge. In this study, Ta and Cr elements are added to (FeCoNiNb)98Al2 high-entropy alloy to improve oxidation resistance, and the changes in microstructure and mechanical properties of (FeCoNiNb)98-2x(TaCr)xAl2 as well as the oxidation behaviors at 900 ◦C are sys­ tematically investigated. The results show that the addition of Ta and Cr elements promotes the increase and growth of the Laves phase in the alloy, which improves the oxidation resistance of the alloy and maintains the excellent mechanical properties of (FeCoNiNb)98Al2. The formation of CrTaO4, CrNbO4, and Cr2O3 composite oxide scales can not only prevent the diffusion of O into the alloy, but also inhibit the external diffusion of matrix elements. This result provide experimental data and theoretical support for the optimal design of the high- entropy alloy compositions to improve their antioxidant properties while maintaining excellent mechanical properties.
+
+Article Content:
+Investigation on oxidation behavior and mechanical properties of 
+FeCoNiNbAlCrTa high entropy alloy at 900 ◦C
+Huaqing Yi a,1, Liuqing Ni a,1, Bingbing Yin a,b,*, Mengtian Liang a,b, Hongzhi Yang a,b,  
+Yi Yang a,b,*
+a School of Materials Science and Engineering, Xiangtan University, Xiangtan, Hunan, 411105, PR China
+b Key Laboratory of Materials Design and Preparation Technology of Hunan Province, Xiangtan University, Xiangtan, Hunan, 411105, PR China
+A R T I C L E I N F O
+Keywords:
+High entropy alloy
+Oxidation resistance
+Mechanical properties
+Corrosion
+A B S T R A C T
+In recent years, eutectic high entropy alloys have been found to have excellent mechanical properties and 
+corrosion resistance; however, the simultaneous achievement of these mechanical properties and high- 
+temperature oxidation resistance still constitutes a tough challenge. In this study, Ta and Cr elements are 
+added to (FeCoNiNb)98Al2 high-entropy alloy to improve oxidation resistance, and the changes in microstructure 
+and mechanical properties of (FeCoNiNb)98-2x(TaCr)xAl2 as well as the oxidation behaviors at 900 ◦C are sys­
+tematically investigated. The results show that the addition of Ta and Cr elements promotes the increase and 
+growth of the Laves phase in the alloy, which improves the oxidation resistance of the alloy and maintains the 
+excellent mechanical properties of (FeCoNiNb)98Al2. The formation of CrTaO4, CrNbO4, and Cr2O3 composite 
+oxide scales can not only prevent the diffusion of O into the alloy, but also inhibit the external diffusion of matrix 
+elements. This result provide experimental data and theoretical support for the optimal design of the high- 
+entropy alloy compositions to improve their antioxidant properties while maintaining excellent mechanical 
+properties.
+1. Introduction
+Eutectic high entropy alloys (HEAs) are expected to be used in the 
+petrochemical, aerospace and automotive industries due to their excel­
+lent mechanical properties, corrosion resistance and good processability 
+[1–4]. In recent years, a novel eutectic FeCoNiNb high-entropy alloy 
+with typical FCC phase and lamellar Laves phase has been developed, 
+which balances strength and hardness [5–7]. In addition, the excellent 
+fluidity of these eutectic high-entropy alloys during casting effectively 
+reduces the defects induced by segregation and shrinkage during so­
+lidification [8]. However, the presence of the Laves phase as a diffusion 
+channel for the internal diffusion of oxygen leads to a deterioration in 
+the oxidation resistance of the alloy at high temperatures [9]. In addi­
+tion, the Nb element has a high affinity for oxygen and is prone to form 
+the porous and unprotective oxide Nb2O5 during oxidation [10–13]. All 
+of these factors affect the high-temperature application of FeCoNiNb 
+eutectic high-entropy alloys. Therefore, it is necessary to find a suitable 
+way to improve the oxidation resistance of FeCoNiNb eutectic 
+high-entropy alloys.
+High-entropy alloys have a unique cocktail effect, and adjusting the 
+composition of the alloys is an effective means of achieving excellent 
+mechanical properties and high-temperature oxidation resistance [14]. 
+Han et al. [15]investigated that the addition of 1.7 at.% Al to CoCrFe­
+NiTa eutectic high entropy alloy induced the formation of ordered 
+nanoprecipitates. The coherently ordered L12 precipitates were found to 
+be thermodynamically stable against high-temperature annealing, 
+which provided an effective strain hardening that improved the 
+high-temperature performance of the alloy [16]. Therefore, the addition 
+of small amounts of Al/Cr can promote the formation of ordered phases 
+in eutectic high-entropy alloys, and the eutectic structure of the alloys 
+will be more neatly aligned and denser to achieve higher strength. 
+Eutectic HEAs show promise for high-temperature applications due to 
+their unusually slow diffusion behavior, which could result in better 
+creep resistance than commercial Fe–Cr-based stainless steels [17,18]. 
+This makes eutectic HEAs potential candidates for use in components 
+such as heat exchanger tubes in power plants operating around 900 ◦C 
+* Corresponding authors. School of Materials Science and Engineering, Xiangtan University, Xiangtan, Hunan, 411105, PR China.
+E-mail addresses: yinbingbing1990@xtu.edu.cn (B. Yin), yangyi@xtu.edu.cn (Y. Yang). 
+1 These authors contributed equally to this work.
+Contents lists available at ScienceDirect
+Journal of Materials Research and Technology
+journal homepage: www.elsevier.com/locate/jmrt
+https://doi.org/10.1016/j.jmrt.2024.11.250
+Received 30 July 2024; Received in revised form 21 October 2024; Accepted 26 November 2024  
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+Available online 28 November 2024 
+2238-7854/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license ( http://creativecommons.org/licenses/by- 
+nc-nd/4.0/ ). 
+
+[19]. To ensure the long-term reliability of HEAs under such conditions, 
+it is essential to achieve a balance between mechanical properties and 
+oxidation resistance. Zhang et al. [20] have successfully improved the 
+oxidation resistance of the CrxMnFeNi high-entropy alloy in air at 800 ◦C 
+via adjusting the content of Cr. The presence of Cr effectively promotes 
+the formation of a protective dense oxide layer, which hinders the 
+interdiffusion of oxygen and alloying elements. In addition, TaCrO4 has 
+been found to be an oxide that can inhibit the inward diffusion of oxygen 
+at high temperatures in the oxidation of refractory high-entropy alloys 
+[21]. Therefore, the formation of TaCrO4 via the addition of Ta and Cr 
+can significantly improve the oxidation resistance of high-entropy al­
+loys, such as TaMoCrTiAl [22], TaMoCrTi [23], TaMoCrAl [24], 
+TaMoCrTiAlSi [25] and CrMoNbTaV [26].
+Fig. 1. XRD patterns of cast (FeCoNiNb)98-2x(TaCr)x Al2 high-entropy alloys.
+Fig. 2. Microstructures of the (FeCoNiNb)98-2x(TaCr)xAl2 high-entropy alloys with change of Ta and Cr. (a) (TaCr)0, (b) (TaCr)6, (c) (TaCr)10, (d) (TaCr)14.
+Fig. 3. (a) Bright field image of (TaCr)10 alloy, (b) and (c) SAEDs of points 1 and 2 in (a).
+Table 1 
+Volume fraction (%) of the Laves phase in alloys with different Ta and Cr 
+element contents.
+Category
+(TaCr)0
+(TaCr)6
+(TaCr)10
+(TaCr)14
+Volume fraction (Laves phase)
+30.2
+54.3
+60.3
+76.6
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+However, high-entropy alloys with complex compositions form a 
+variety of oxides during oxidation, which exhibit different properties at 
+different temperatures and have unpredictable effects on the antioxidant 
+properties [27]. In addition, the FeCoNiNb high-entropy alloys have a 
+wide solidification range and are highly reactive with Al/Cr/Ta, leading 
+to complex phase transformations at different compositions [28–30] 
+Therefore, the key to the design of FeCoNiNb-based eutectic 
+high-entropy alloys is to achieve excellent oxidation resistance while 
+maintaining mechanical properties and achieving composition-related 
+microstructural stability.
+In this work, the effects of Ta and Cr elements on the microstructure, 
+mechanical properties and high temperature oxidation resistance of 
+(FeCoNiNb)98Al2(TaCr)x high entropy alloys were investigated. The 
+coupling 
+relationship 
+between 
+the 
+composition-microstructure- 
+mechanical properties-antioxidant properties of this alloy was 
+revealed. The results will contribute to the design and compositional 
+optimization of FeCoNiNb series eutectic high-entropy alloys and 
+enhance their oxidation resistance at ultra-high temperatures.
+2. Experiment
+The alloys were prepared from commercially pure Al, Co, Cr, Ni, Fe, 
+Ti, and Si (99.9 wt%). The ingots with nominal compositions of 
+(FeCoNiNb)98-2x(TaCr)xAl2 (x = 0, 6, 10, and 14) high-entropy alloys 
+(marked as (TaCr)0, (TaCr)6, (TaCr)10, and (TaCr)14, respectively) were 
+arc-melted in a vacuum arc furnace. Each sample was remelted at five 
+times to ensure compositional homogeneity. Rectangular specimens (10 
+× 10 × 3 mm) and cylindrical specimens (R4 × 6 mm) were cut from the 
+alloy ingots for the oxidation and compression experiments, respec­
+tively. All samples were ground with 1200# silicon carbide grit papers, 
+washed in an ultrasonic alcohol bath, and dried immediately prior to 
+testing. All samples were loaded into crucibles and placed in a muffle 
+furnace (KLS-1500X–S). The oxidation experiments were carried out at 
+900 ◦C in static air for 2, 4, 6,12, 24, 36, 48, 60, 72 and 84 h respectively. 
+The mass of the samples was recorded using an electronic balance 
+(BS224S) to an accuracy of 0.01 mg. Compression tests were carried out 
+on cylindrical specimens using an electronic universal testing machine 
+(WDW-100) at a compression rate of 1 × 10−3 s−1. The composition and 
+microstructure of the alloy matrix and oxide films were analyzed via X- 
+ray diffraction (XRD, U1tima IV) and scanning electron microscope 
+(SEM, EVO MA10) equipped with an energy-dispersive spectroscope 
+(EDS). The volumetric fraction was determined by using Image-Pro Plus 
+software to analyze the area occupied by the Laves phase within the 
+matrix across different fields of view. To further understand the oxida­
+tion mechanism, a transmission electron microscope (TEM, JEM-2100) 
+equipped with an energy-dispersive X-ray microanalysis (EDX) system 
+was used for fine characterization of the oxidation products. The TEM 
+samples were prepared by the traditional cross-section sample prepa­
+ration method, the TEM samples are glued with copper rings which 
+finally thinned by a precision ion milling machine (GATAN 691), and 
+specific details of TEM sample preparation can be found in ‘TEM spec­
+imen preparation techniques’ [30].
+3. Results
+3.1. Microstructure and composition of the cast alloys
+Fig. 1 illustrates the phase composition of cast alloys with varying 
+Fig. 4. Compressive engineering stress-strain curves for the (FeCoNiNb)98- 
+2x(TaCr)xAl2 high entropy alloys obtained at room temperature.
+Fig. 5. The kinetic oxidation weight gain curves of (a) all samples and (b) the samples with Cr/Ta addition which is the magnified image of (a).
+Table 2 
+Fitting parameters of the (FeCoNiNb)98-2x(TaCr)xAl2 high-entropy alloys at 
+900 ◦C in air for 84 h.
+Alloys
+n
+Kp (mg2⋅cm−4⋅s−1)
+R2
+(TaCr)0
+0.44
+5.41 × 10−5
+0.99
+(TaCr)6
+0.45
+3.74 × 10−6
+0.97
+(TaCr)10
+0.51
+1.13 × 10−6
+0.97
+(TaCr)14
+0.53
+7.21 × 10−7
+0.99
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+concentrations of Ta and Cr elements, showing that all as-cast alloys 
+have FCC and Laves phase. The addition of Ta and Cr elements does not 
+cause any obvious phase changes in the alloys. Microstructures of cast 
+(FeCoNiNb)98-2x(TaCr)xAl2 high-entropy alloys are shown in Fig. 2. The 
+(TaCr)0 alloy has fully eutectic microstructures consisting of FCC and 
+Laves phases (Fig. 2 (a)). The (TaCr)6, (TaCr)10 and (TaCr)14 alloys show 
+a bulk Laves phases (Fig. 2(c and d)). TEM micromorphology and 
+selected area diffraction patterns (SAED) results (Fig. 3(a–c)) on 
+(TaCr)10 alloy further demonstrated the eutectic structure FCC phase 
+and Laves phase. The addition of Ta and Cr elements breaks the original 
+completely eutectic structure of (TaCr)0. The vary of Laves phase volume 
+fraction in alloys with different Ta and Cr elemental contents is shown in 
+Table 1. With the addition of Ta and Cr elements the volume fraction of 
+the Laves phase increases from 30.19% to 76.6%. However, the eutectic 
+Laves phase gradually refines, while the initial Laves phase gradually 
+coarsens, which is related to the distribution of the elements. Therefore, 
+the addition of Ta/Cr has a significant impact on the microstructural 
+characteristics, primarily reflected in an increase in the volume fraction 
+of the primary Laves phase and a decrease in the interlamellar spacing of 
+the eutectic structure. Research have shown that the addition of Ta and 
+Cr elements can promote the growth of the Laves phase in the alloy [31,
+32]. According to binary alloy phase diagrams, Ta and Nb can form 
+Laves phases with elements such as Cr, Fe, and Co, including TaFe2, 
+NbFe2, TaCr2, NbCr2, and TaCo2 [33]. The compositional data in 
+Table S1 and Table S2 reveal differences in elemental distribution be­
+tween the gray FCC phase and the white Laves phase. EDS analysis re­
+veals that the Laves phase in the alloy is a multi-component complex 
+rather than a simple binary intermetallic compound. Consequently, the 
+presence of Cr and Ta significantly facilitates the formation of the Laves 
+phase.
+3.2. Mechanical properties
+Fig. 4 displays the engineering compression stress-strain curves of 
+(FeCoNiNb)98-2x(TaCr)xAl2 high-entropy alloys at room temperature. 
+The strength of the alloys decreases slightly with the addition of Cr and 
+Ta, with the yield point approaching a stress of 1.5 GPa and a strain of 
+8%. However, increasing the Cr/Ta content does not significantly alter 
+the stress-strain behavior of the alloy. Research has found that eutectic 
+alloys can withstand the greatest stress when the force is perpendicular 
+to the direction of the eutectic arrangement, and the least stress when 
+the force is parallel to the direction of the eutectic arrangement [7]. 
+Therefore, the microstructural arrangement plays a more critical role in 
+determining the compressive behavior of the alloy than the variations in 
+Cr/Ta content. This suggests that the mechanical performance is more 
+sensitive to changes in the structural features of the alloy rather than to 
+the specific compositional adjustments of Cr/Ta. Although increasing 
+the volume fraction of the Laves phase may adversely affect the me­
+chanical properties, reducing the interlamellar spacing enhances these 
+properties. The interplay between these opposing effects may account 
+for the minimal overall changes observed in mechanical performance.
+3.3. Oxidation behaviors
+3.3.1. Oxidation kinetics
+The mass changes of the (FeCoNiNb)98-2x(TaCr)xAl2 at 900 ◦C are 
+shown in Fig. 5(a). The oxidation kinetics of each alloy essentially follow 
+a parabolic law, with a sharp increase in weight in the early stages of 
+oxidation followed by a levelling off. The oxidation resistance of the 
+alloy was improved by the addition of the elements Ta and Cr, as shown 
+in Fig. 5(b) which is the magnified image of (a). For a quantitative 
+comparison of the rate constants of these alloys, the evolution of the 
+mass gain over time was fitted using a power function, as follows (Eq .(1) 
+[34,35]: 
+(ΔM) = Kptn
+(1) 
+where ΔM represents the weight gain per unit area, Kp is the oxidation 
+constant, t is the oxidation time, and n is a time exponent. The values of 
+Kp and n for alloys with different Ta/Cr contents were obtained by fitting 
+the experimental data (Table 2). The results show that the mass gain 
+data for all samples are well fitted (correlation coefficient R2 > 0.99). 
+The n values for all alloys fluctuated around 0.5. This suggests that the 
+oxidation kinetics are approximately parabolic. However, the time ex­
+ponents deviate from 0.5, which is typically attributed to defects in the 
+oxide film, such as voids and cracks [36]. In the early stage of the alloy 
+oxidation, the oxide film of the metal does not completely cover the 
+surface of the metal sample, and the diffusion reaction at the alloy-gas 
+interface is an important factor that mainly controls the alloy oxida­
+tion rate. When the alloy is completely covered by the oxide film the 
+interaction between the metal and the gas is blocked, and the diffusion 
+reaction becomes the main control of the alloy oxidation rate [37]. 
+Variations in Ta and Cr elemental content will result in different 
+oxidation layers in the alloys and subsequent differences in oxygen 
+barrier, which will show different oxidation mechanisms in the 
+mid-oxidation stage. Comparing the oxidation rate constants of the al­
+loys at 900 ◦C, it can be determined that (TaCr)0 has the worst oxidation 
+resistance. The addition of Cr and Ta significantly improves the oxida­
+tion resistance of the alloy, and the oxidation rate of the alloy at 900 ◦C 
+is reduced by two orders of magnitude.
+3.3.2. Microstructure evolution of the oxidation surface
+Fig. 6 shows the XRD results of the alloys after oxidation at 900 ◦C for 
+84 h. Four oxides are detected on the surface of the oxidized alloy (i.e., 
+Fe4O3, NbCrO4, TaCrO4, and Cr2O3). Only Fe4O3 is detected on the 
+oxidized surface of the (TaCr)0 alloy, which is attributed to the fact that 
+iron ions diffuse faster than the cobalt and nickel elements [38], and that 
+the alloy did not form any protective oxide layer during the oxidation 
+process. The oxides of alloys containing the elements Ta and Cr are more 
+complex than those of (TaCr)0 alloys, and it is the presence of these 
+oxides that improves the oxidation resistance of the alloys. Ta2O5, 
+Nb2O5, and Al2O3 are not detected from the XRD spectra because Ta2O5 
+and Nb2O5 are consumed as intermediates in the generation of TaCrO4 
+and NbCrO4.
+Fig. 7 shows the surface morphologies of different alloys oxidized at 
+900 ◦C for 30 min. The surface of the TaCr)0 alloy is entirely covered 
+Fig. 6. XRD patterns of the (FeCoNiNb)98-2x(TaCr)xAl2 high-entropy alloys 
+after high-temperature air oxidation at 900 ◦C in air for 84 h.
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+with irregularly shaped agglomerated oxides. The oxide scale on the 
+surface of the (TaCr)6 and (TaCr)10 alloys is continuous and exhibits a 
+worm-like morphology. In contrast, the oxide scale on the surface of the 
+(TaCr)14 alloys is incomplete, characterized by worm-like and granular 
+oxide structures. Based on the EDS results (Fig. S2 and Table S3), the 
+oxide scale is mainly composed of Fe/Co-enriched oxides. The surface 
+oxide particles on the (TaCr)6 alloy are small and dispersed, while those 
+on the (TaCr)10 alloy are larger and show slight aggregation. The 
+(TaCr)14 alloy has the most aggregated oxide particles, forming stripes 
+with noticeable variations in oxide height. The oxide distribution is 
+similar to that observed in the initial stages of alloy oxidation. In the 
+early oxidation stage, a complete Fe oxide film does not form on the 
+alloy surface; instead, the Fe element reacts with surface oxygen to 
+produce Fe3O4 through diffusion in the later stages of oxidation. The 
+Fe3O4 formed at these later stages tends to grow on the Fe oxides pro­
+duced earlier in the oxidation process [39]. According to the XRD and 
+SEM analysis results (Fig. 1 and Fig. S1), the FCC phase, characterized by 
+a banded distribution, is mainly composed of Fe, Co, and Ni. Considering 
+the oxide distribution pattern and the microstructural arrangement of 
+the alloy, it can be inferred that, during the early oxidation stage, the 
+FCC phase on the alloy surface tends to combine with oxygen to form 
+oxidation protrusions, while the Laves phase tends to adsorb oxygen and 
+produce oxides through internal oxidation.
+3.3.3. Microstructure evolution of the oxidation cross-section
+To further study the oxidation mechanism of the alloy at 900 ◦C, the 
+alloys are oxidized for 84 h, and the cross-section morphologies after 
+oxidation are shown in Fig. 8. All samples show oxide scale and Al2O3 is 
+irregularly distributed in the inner oxide region of the alloys from the 
+EDS mappings. The oxide scale of the (TaCr)0 alloy which has the most 
+serious oxidation is composed of an inner layer of Nb-rich oxides 
+(Nb2O5) and an outer layer of Fe4O3 oxide layer (Fig. 8(a). The outer­
+most layer of Fe3O4 which is hard and brittle in nature, has a typical 
+spinel morphology, resulting in a layer with more cracks and larger gaps, 
+which is easily detached and cannot provide protection.
+The samples with added Ta and Cr elements have a similar 
+Fig. 7. The surface morphologies and EDS mappings of the (FeCoNiNb)98-2x(TaCr)xAl2 high-entropy alloys oxidation at 900 ◦C for 30 min. (a) (TaCr)0, (b) (TaCr)6, 
+(c) (TaCr)10, (d) (TaCr)14.
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+distribution of oxide layers, but without obvious oxides shedding during 
+the oxidation process Fig. 8(c and d). Combined with the EDS results 
+(Fig. S3 and Table S4), it can be determined that the oxide scales consist 
+of an inner layer of Nb, Ta and Cr oxides, an intermediate oxide layer of 
+Cr2O3 and an outer layer of Fe4O3 oxide. During the oxidation of alloys, 
+the oxidation of different elements occurs in different stages [40]. In the 
+initial stages of oxidation, the sequence of oxidation of elements de­
+pends on their affinity for oxygen [41]. The formation of a continuous 
+oxide film is determined by the critical concentration of elements 
+required for oxide formation, which is influenced by diffusion rates and 
+the critical partial pressure of oxygen [42]. Although the affinity of 
+oxygen for niobium is higher than that for iron in the base alloy, the 
+faster diffusion rate of iron (Fe > Co > Ni > Nb > Ta) [38,43] allows the 
+necessary concentration of Fe to quickly accumulate at the interface to 
+form continuous Fe3O4. In contrast, the slower-diffusing niobium reacts 
+with the oxygen that penetrates the alloy to form Nb2O5. In alloys with 
+added Ta and Cr, the affinity of oxygen for Nb, Cr, and Ta exceeds that 
+for Fe, Co, and Ni. However, the concentrations of Cr and Ta are 
+insufficient to reach the critical values needed to form continuous Cr2O3 
+and Ta2O5. As a result, Ta, Cr, and Nb eventually react with the oxygen 
+diffusing into the matrix to form (Nb,Ta)CrO4.
+The order in which the elements in an alloy are oxidized in the 
+middle stage of oxidation depends on their diffusion coefficients in the 
+particular oxide layer. Elements with high diffusion coefficients are 
+preferentially oxidized, leading to delamination of the alloy during 
+oxidation [44]. In the early stages of oxidation, the Fe3O4 oxide layer 
+formed on the surface of the alloy is not protective. However, the iron 
+atoms continue to diffuse outwards, while the oxygen atoms continue to 
+diffuse into the interior of the alloy. When Ta and Cr elements are added 
+to the alloy, a layer of (Nb,Ta)CrO4 oxide is formed on the surface of the 
+alloy at the early stage of oxidation. The Cr elements in the (Nb,Ta)CrO4 
+oxide layer has a higher diffusivity than Fe, so Cr is preferred over Fe in 
+the alloy surface to form Cr2O3. In the later stages of oxidation, the iron 
+atoms through diffusion through the (Nb,Ta)CrO4 and the Cr2O3 oxide 
+layer, and the iron atoms are diffused to the surface. Cr2O3 oxide layer 
+by diffusion and react with oxygen on the alloy surface to form Fe3O4 
+[45]. TEM analysis is conducted on the oxide of the (TaCr)10, and the BF 
+and SAED images are presented in Fig. 9. The SAED results identify the 
+Fig. 8. The cross-sectional morphologies and EDS mappings of different alloys oxidized at 900 ◦C for 84 h (a) (TaCr)0; (b) (TaCr)6; (c) (TaCr)10; (d) (TaCr)14.
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+presence of (Nb,Ta)CrO4, Al2O3, Ta2O5, and FCC as shown in Fig. 9(d–f), 
+which is consistent with the XRD results shown in Fig. 6.
+4. Discussion
+In the early stages of alloy oxidation, Fe, Ta, Cr and Nb elements are 
+oxidized simultaneously, Fe atoms combine with oxygen to form 
+oxidation protrusions, while Ta, Cr and Nb elements combine with ox­
+ygen to form a composite oxide layer of (Ta,Nb)CrO4. Thermodynami­
+cally, the free energies of Nb2O5 and Ta2O5 are actually lower than those 
+of Cr2O3, and Nb and Ta should be oxidized before Cr. However, the XRD 
+and EDS results show that almost no simple oxides of Nb and Ta are 
+formed. Nb and Ta exist in the alloy mainly as intermetallics in the Laves 
+phase, where bonding between Nb5+, Ta5+ and O2−is difficult. This 
+leads to the simultaneous oxidation of Nb, Cr and Ta elements, while the 
+simple oxides formed by the oxidation of Ta and Nb react with Cr2O3 to 
+form complex oxides [46]. This results in the simultaneous oxidation of 
+the elements Nb, Cr, and Ta, while at the same time the simple oxides 
+formed by the oxidation of Ta and Nb react with Cr2O3 to form complex 
+oxides [45]. The standard free energy data for the relevant oxides 
+(Fig. 10) [12]. The chemical equations for the formation of CrTaO4 and 
+CrNbO4 are given below (Eqs. (2)–(5)) [10,47]: 
+1
+2Cr2O3(s) + 1
+2Ta2O5(s) = CrTaO4(s)
+(2) 
+1
+2Cr2O3(s) + 1
+2Nb2O5(s) = CrNbO4(s)
+(3) 
+ΔGCrTaO4
+0
+= 1
+2
+(
+ΔGCr2O3
+0
++ ΔGTa2O5
+0
+)
+(4) 
+Fig. 9. Matrix and oxide microstructures of (TaCr)10 high entropy alloy oxidized at 900 ◦C for 84h, (a–c) oxide morphologies, (d–g) SAEDs of points 1–4 in (a–c).
+Fig. 10. (a) Calculated formation and binding energies of each oxide at 900 ◦C, (b) thermodynamic data of each oxide at 900 ◦C.
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+ΔGCrNbO4
+0
+= 1
+2
+(
+ΔGCr2O3
+0
++ ΔGNb2O5
+0
+)
+(5) 
+The first principles calculation is used to calculate the formation 
+energy (Ef) and binding energy (E0) of each oxide formed during the 
+oxidation of the alloy. The crystal structure and formulae of the oxides 
+are presented in the support material (Fig. S4). The negative formation 
+energies of each oxide indicate their stability. The results of the calcu­
+lation of the formation and binding energies of each oxide are shown in 
+Fig. 10(a). The strength of the phase formation ability increases as the 
+formation energy decreases, and the stability of the structure increases 
+as the binding energy decreases. These calculated results are consistent 
+with the thermodynamic data of the oxides shown in Fig. 10(b) [12]. 
+This confirms the previously speculated oxidation mechanism of the 
+alloy, i.e., after the addition of Ta, Cr elements, the alloy surface forms a 
+protective oxide layer compared to the base alloy, and oxygen atoms 
+diffuse slowly in this oxide layer, improving the oxidation resistance of 
+the alloy. Based on the formation and binding energies of each oxide, it 
+can be concluded that CrTaO4 and CrNbO4 are more stable and easier to 
+form than Cr2O3 during the oxidation process. However, the generation 
+of Nb2O5 and Ta2O5 is limited by the Laves phase, and there is less 
+obvious competition between the formation of Ta2O5 and Nb2O5 and the 
+formation of Cr2O3. The addition of Al element is not sufficient to 
+compete with the simultaneous generation of Cr2O3, Nb2O5 and Ta2O5. 
+As a result, the three oxides form a composite oxide layer with protective 
+CrTaO4 and CrNbO4 in the subsequent reaction. This explains why 
+Nb2O5 and Ta2O5 are not detected by the XRD test. The literature survey 
+also indicates that certain Nb composite oxides possess excellent anti­
+oxidant properties [48]. Additionally, the formation of CrNbO4 com­
+posite oxides enhances the adhesion between the alloy matrix and the 
+oxide layer, thereby improving the antioxidant properties the alloy [48].
+Fig. 11 illustrates the mechanistic diagram of (TaCr)6, (TaCr)10 and 
+(TaCr)14 high entropy alloys at 900 ◦C. The reason for the outermost 
+layer of Fe4O3 oxidation is well understood and can be explained by the 
+law of elemental diffusion coefficients. A layer of dense Cr2O3 appears 
+on the surface of the alloy after a certain degree of oxidation, which 
+greatly inhibits the diffusion of oxygen into the interior of the alloy [49]. 
+The Nb/Ta-rich oxides inhibit the diffusion of chromium from the 
+interior to the exterior of the alloy due to the weak affinity between Nb, 
+Ta and Cr [45]. On the contrary, iron, cobalt and nickel have a strong 
+affinity for Nb, Ta [45], and Nb, Ta-rich oxides can adsorb these three 
+elements. Therefore, once Cr2O3 reaches a certain thickness, the growth 
+stops. When chromium is depleted, iron diffuses from the Nb-rich, 
+Ta-rich oxides and Cr2O3 oxide layer in the alloy to the alloy surface. 
+Here, it reacts with oxygen to form a loose Fe3O4 oxide film [50]. In the 
+later oxidation experiments, an abnormal increase in the oxidation rate 
+of the alloy is observed with the addition of Ta and Cr elements. It is 
+analyzed that during the oxidation process, the alloys form oxide layers 
+with different thicknesses, coefficients of thermal expansion and ulti­
+mate stress resistance. As the oxidation experiments progressed, the 
+oxide on the surface of the alloy became more complex and thicker, 
+resulting in the formation of microcracks. This resulted in an abnormal 
+increase in the rate of oxidation of the alloy in the later stages of 
+oxidation.
+As shown in Fig. 8, internal oxidation occurred in all alloys. 
+Furthermore, the oxidation process exhibits selectivity, with oxygen 
+penetrating deeper into the alloy mainly through the Laves phase and 
+reacting with Al elements to form Al2O3 [51], and with Nb and Cr ele­
+ments in the Laves phase to form Nb2O5 and Ta2O5. In HEA, oxygen ion 
+diffusion occurs mainly through a gap-filling mechanism. Similar to 
+vacancy diffusion, when an oxygen atom moves to a low-energy site, it is 
+"trapped" and unlikely to move away from that site [52]. Conversely, if 
+the site is a high-energy site, the ion has a higher probability of returning 
+to its original site, thus slowing down the diffusion process [53]. How­
+ever, the diffusion of oxygen ions is much easier in the Laves phase than 
+in the HEA. Diffusion of oxygen ions in the Laves phase leads to internal 
+oxidation of the alloy and the formation of oxides of various sizes. The 
+Laves phase exhibits increased enrichment of Ta and Cr, which enhances 
+its affinity for oxygen and creates more voids to facilitate diffusion. In 
+this system, the adsorption of oxygen in the Laves phase of the alloy 
+leads to the formation of Al2O3 inside the alloy, which also promotes the 
+formation of the (Nb,Ta)CrO4 composite oxide layer, thus improving the 
+antioxidant property of the alloy. Moreover, due to the relatively low Al 
+content in the alloy, the Al2O3 generated from the internal oxidation of 
+the alloy does not have a major effect on the overall antioxidant property 
+of the alloy.
+5. Conclusion
+In the present work, (FeCoNiNb)98-2x(TaCr)xAl2 high-entropy alloy 
+with excellent mechanical properties and oxidation resistance is 
+designed with elemental regulation by adding Ta and Cr elements. The 
+results show that Ta and Cr elements improve the oxidation resistance of 
+the alloy, which is two orders of magnitude higher than that of (FeCo­
+NiNb)98Al2 eutectic high-entropy alloy. This improvement is attributed 
+to the formation of a composite oxide layer consisting of CrTaO4, 
+CrNbO4 and Cr2O3. The addition of Ta and Cr elements increases the 
+volume fraction of the Laves phase in the (FeCoNiNb)98Al2 eutectic 
+high-entropy alloy and reduces the interlayer spacing of the eutectic 
+Fig. 11. Oxidation mechanistic diagram of (TaCr)6, (TaCr)10 and (TaCr)14 high entropy alloys at 900 ◦C.
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+structure, helping to alleviate the mechanical degradation associated 
+with the Laves phase. The interaction of those opposing effects leads to 
+stable mechanical performance of the alloy. Despite the compositional 
+changes, the excellent mechanical properties of the base alloy are 
+maintained.
+Declaration of competing interest
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+Acknowledge
+This work is supported by the National Natural Science Foundation 
+of China (Grant No.52271014), the Foundation of Education Bureau of 
+Hunan Province (Grant No.22B0163).
+Appendix A. Supplementary data
+Supplementary data to this article can be found online at https://doi. 
+org/10.1016/j.jmrt.2024.11.250.
+References
+[1] Feng R, Feng B, Gao MC, Zhang C, Neuefeind JC, Poplawsky JD, Ren Y, An K, 
+Widom M, Liaw PK. Superior high-temperature strength in a supersaturated 
+refractory high-entropy alloy. Adv Mater 2021;33:e2102401. https://doi.org/ 
+10.1002/adma.202102401.
+[2] Xiong W, Guo AXY, Zhan S, Liu C-T, Cao SC. Refractory high-entropy alloys: a 
+focused review of preparation methods and properties. J Mater Sci Technol 2023; 
+142:196–215. https://doi.org/10.1016/j.jmst.2022.08.046.
+[3] Zhou J-l, Cheng Y-h, Chen Y-x, Liang X-b. Composition design and preparation 
+process of refractory high-entropy alloys: a review. Int J Refract Metals Hard Mater 
+2022;105. https://doi.org/10.1016/j.ijrmhm.2022.105836.
+[4] Lu Y, Dong Y, Guo S, Jiang L, Kang H, Wang T, Wen B, Wang Z, Jie J, Cao Z, 
+Ruan H, Li T. A promising new class of high-temperature alloys: eutectic high- 
+entropy alloys. Sci Rep 2014;4:6200. https://doi.org/10.1038/srep06200.
+[5] Duan D, Wu Y, Chen H, Wang X, Liu X, Wang H, Jiang S, Lu Z. A strategy to design 
+eutectic high-entropy alloys based on binary eutectics. J Mater Sci Technol 2022; 
+103:152–6. https://doi.org/10.1016/j.jmst.2021.06.038.
+[6] Chung D, Ding Z, Yang Y. Hierarchical eutectic structure enabling superior fracture 
+toughness and superb strength in CoCrFeNiNb0.5 eutectic high entropy alloy at 
+room temperature. Adv Eng Mater 2018;21. https://doi.org/10.1002/ 
+adem.201801060.
+[7] Ding ZY, He QF, Wang Q, Yang Y. Superb strength and high plasticity in laves 
+phase rich eutectic medium-entropy-alloy nanocomposites. Int J Plast 2018;106: 
+57–72. https://doi.org/10.1016/j.ijplas.2018.03.001.
+[8] Lu Y, Dong Y, Jiang H, Wang Z, Cao Z, Guo S, Wang T, Li T, Liaw PK. Promising 
+properties and future trend of eutectic high entropy alloys. Scr. Mater 2020;187: 
+202–9. https://doi.org/10.1016/j.scriptamat.2020.06.022.
+[9] Gorr B, Schellert S, Muller F, Christ HJ, Kauffmann A, Heilmaier M. Current status 
+of research on the oxidation behavior of refractory high entropy alloys. Adv Eng 
+Mater 2021;23:14. https://doi.org/10.1002/adem.202001047.
+[10] Li Z, Wang L, Wang B, Li Z, Li Z, Zhang Y, Luo L, Chen R, Su Y, Guo J. Oxidation 
+behavior of Ti-Nb-Mo-Al-Six refractory high entropy alloy at 1000◦C. Corrosion Sci 
+2022;206. https://doi.org/10.1016/j.corsci.2022.110504.
+[11] Varma SK, Sanchez F, Moncayo S, Ramana CV. Static and cyclic oxidation of Nb-Cr- 
+V-W-Ta high entropy alloy in air from 600 to 1400 ◦C. J Mater Sci Technol 2020; 
+38:189–96. https://doi.org/10.1016/j.jmst.2019.09.005.
+[12] Müller F, Gorr B, Christ H-J, Müller J, Butz B, Chen H, Kauffmann A, Heilmaier M. 
+On the oxidation mechanism of refractory high entropy alloys. Corrosion Sci 2019; 
+159. https://doi.org/10.1016/j.corsci.2019.108161.
+[13] Gawel R, Rogal Ł, Przybylski K. Oxidation resistance of Ti-Al-Cr-Nb-based high- 
+entropy alloys in air at 1073 K. J Mater Eng Perform 2019;28:4163–70. https:// 
+doi.org/10.1007/s11665-019-04177-x.
+[14] Miracle DB, Senkov ON. A critical review of high entropy alloys and related 
+concepts. Acta Mater 2017;122:448–511. https://doi.org/10.1016/j. 
+actamat.2016.08.081.
+[15] Han L, Xu X, Li Z, Liu B, Liu CT, Liu Y. A novel equiaxed eutectic high-entropy alloy 
+with excellent mechanical properties at elevated temperatures. Materials Research 
+Letters 2020;8:373–82.
+[16] Han L, Xu X, Wang L, Pyczak F, Zhou R, Liu YJMRL. A eutectic high-entropy alloy 
+with good high-temperature strength-plasticity balance. Materials Research Letters 
+2019;7:460–6. https://doi.org/10.1080/21663831.2019.1650130.
+[17] Holcomb GR, Tylczak J, Carney C. Oxidation of CoCrFeMnNi high entropy alloys. 
+JOM 2015;67:2326–39. https://doi.org/10.1007/s11837-015-1517-2.
+[18] Lim J, Shin BH, Kim DI, Bae JS, OK JW, Kim S, Park J, Lee JI, Yoon JH. 
+Microstructure and electrochemical behavior of high-entropy alloy. Cantor. Metals 
+2024;14:846. https://doi.org/10.3390/met14080846.
+[19] Adomako NK, Kim JH, Hyun YT. High-temperature oxidation behaviour of low- 
+entropy alloy to medium- and high-entropy alloys. Journal of Thermal Analysis 
+Calorimetry 2018;133:13–26. https://doi.org/10.1007/s10973-018-6963-y.
+[20] Zhang Y, Wu H, Yu X, Tang D. Role of Cr in the high-temperature oxidation 
+behavior of CrxMnFeNi high-entropy alloys at 800 ◦C in air. Corrosion Sci 2022; 
+200:110211. https://doi.org/10.1016/j.corsci.2022.110211.
+[21] Lo KC, Chang YJ, Murakami H, Yeh JW, Yeh AC. An oxidation resistant refractory 
+high entropy alloy protected by CrTaO 4 -based oxide. Sci Rep 2019;9:7266. 
+https://doi.org/10.1038/s41598-019-43819-x.
+[22] Schellert S, Gorr B, Laube S, Kauffmann A, Heilmaier M, Christ HJ. Oxidation 
+mechanism of refractory high entropy alloys Ta-Mo-Cr-Ti-Al with varying Ta 
+content. Corrosion Sci 2021;192:109861. https://doi.org/10.1016/j. 
+corsci.2021.109861.
+[23] Fang Q, Peng J, Chen Y, Li L, Feng H, Li J, Jiang C, Liaw PK. Hardening behaviour 
+in the irradiated high entropy alloy. Mech Mater 2021;155:103744. https://doi. 
+org/10.1016/j.mechmat.2021.103744.
+[24] Müller F, Gorr B, Christ H-J, Müller J, Butz B, Chen H, Kauffmann A, Heilmaier M. 
+On the oxidation mechanism of refractory high entropy alloys. Corrosion Sci 2019; 
+159:108161. https://doi.org/10.1016/j.corsci.2019.108161.
+[25] Müller F, Gorr B, Christ H-J, Chen H, Kauffmann A, Heilmaier M. Effect of 
+microalloying with silicon on high temperature oxidation resistance of novel 
+refractory high-entropy alloy Ta-Mo-Cr-Ti-Al. Mater A T High Temp 2018;35: 
+168–76. https://doi.org/10.1080/09603409.2017.1389115.
+[26] Xiao Y, Kuang W, Xu Y, Wu L, Gong W, Qian J, Zhang Q, He Y. Microstructure and 
+oxidation behavior of the CrMoNbTaV high-entropy alloy. Springer International 
+Publishing 2019;34:301–8. https://doi.org/10.1557/jmr.2018.340.
+[27] Lo K-C, Murakami H, Yeh J-W, Yeh A-C. Oxidation behaviour of a novel refractory 
+high entropy alloy at elevated temperatures. Intermetallics 2020;119. https://doi. 
+org/10.1016/j.intermet.2020.106711.
+[28] Yakın A, S¸ ims¸ek T, Avar B, Chattopadhyay AK, ¨Ozcan S, S¸ims¸ek T. The effect of Cr 
+and Nb addition on the structural, morphological, and magnetic properties of the 
+mechanically alloyed high entropy FeCoNi alloys. Appl Phys A 2022;128:686. 
+https://doi.org/10.1007/s00339-022-05836-y.
+[29] Xie T, Xiong Z, Xu Z, Liu Z, Cheng X. Another eutectic point of Co–Cr–Fe–Ni-M (Hf, 
+Ta, Nb) high-entropy system determined using a simple mixture method correlated 
+with mixing enthalpy. Materials Science Engineering A-structural Materials 
+Properties Microstructure Processing 2021;802:140634. https://doi.org/10.1016/ 
+j.msea.2020.140634.
+[30] Rao DVS, Muraleedharan K, Humphreys CJ. TEM specimen preparation 
+techniques.Microscopy: science, technology. applications and education 2011;2: 
+1232.
+[31] Yang L, Jiang X, Sun H, Shao Z, Fang Y, Shu R. Effect of Ta addition on 
+microstructures, mechanical and damping properties of Cu–Al–Mn–Ti alloy. 
+J Mater Res Technol 2021;15:3825–35. https://doi.org/10.1016/j. 
+jmrt.2021.10.031.
+[32] Fang L, Wang J, Li X, Tao X, Ouyang Y, Du Y. Effect of Cr content on microstructure 
+characteristics and mechanical properties of ZrNbTaHf0.2Crx refractory high 
+entropy alloy. J. Alloy. Compd 2022;924:166593. https://doi.org/10.1016/j. 
+jallcom.2022.166593.
+[33] Zhu JH, Liu CT, Pike LM, Liaw PK. Enthalpies of formation of binary Laves phases. 
+Intermetallics 2002;10:579–95. https://doi.org/10.1016/S0966-9795(02)00030- 
+4.
+[34] Sunbul SE, Icin K, Seren FZ, Sahin O, Cakil DD, Sezer R, Ozturk S. Determination of 
+structural, tribological, isothermal oxidation and corrosion properties of 
+Al–Co–Cr–Fe–Ni–Ti–Cu high-entropy alloy. Vacuum 2021;187. https://doi.org/ 
+10.1016/j.vacuum.2021.110072.
+[35] Jadhav M, Singh S, Srivastava M, Chethan Chakradhar RP S, Panigrahi BB. Effect of 
+minute element addition on the oxidation resistance of FeCoCrNiAl and 
+FeCoCrNi2Al high entropy alloy. Adv Powder Technol 2022;33. https://doi.org/ 
+10.1016/j.apt.2021.103410.
+[36] Yu X-X, Taylor MA, Perepezko JH, Marks LD. Competition between 
+thermodynamics, kinetics and growth mode in the early-stage oxidation of an 
+equimolar CoCrFeNi alloy. Acta Mater 2020;196:651–9. https://doi.org/10.1016/ 
+j.actamat.2020.06.056.
+[37] Zhang Y, Fu H, Zhou F, Xie J. Revealing the effect of Al content on the oxidation of 
+γ’-strengthened cobalt-based superalloys. Corrosion Sci 2022;198:110122. https:// 
+doi.org/10.1016/j.corsci.2022.110122.
+[38] Wang Y, Zhang M, Jin J, Gong P, Wang X. Oxidation behavior of CoCrFeMnNi high 
+entropy alloy after plastic deformation. Corrosion Sci 2020;163:108285. https:// 
+doi.org/10.1016/j.corsci.2019.108285.
+[39] Zhang H, Du Y, Lai L, Guo N, Li N, Guo S. The as-cast AlxCrTaTi refractory medium 
+entropy alloys with good room-temperature mechanical properties and high- 
+temperature oxidation resistance. J. Alloy. Compd 2023;932. https://doi.org/ 
+10.1016/j.jallcom.2022.167675.
+[40] Gorr B, Schellert S, Müller F, Christ H-J, Kauffmann A, Heilmaier M. Current status 
+of research on the oxidation behavior of refractory high entropy. Alloys 2021;23: 
+2001047. https://doi.org/10.1002/adem.202001047.
+[41] Li Y, Zhang P, Zhang J, Chen Z, Shen B. Oxidation behavior of AlCoCrFeNiSix high- 
+entropy alloys at 1100 ◦C. Corrosion Sci 2021;190:109633. https://doi.org/ 
+10.1016/j.corsci.2021.109633.
+[42] Chen Y, Zhao X, Xiao P. Effect of microstructure on early oxidation of MCrAlY 
+coatings. Acta Mater 2018;159:150–62. https://doi.org/10.1016/j. 
+actamat.2018.08.018.
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+[43] Zhang H, Du Y, Lai L, Guo N, Li N, Guo S. The as-cast AlxCrTaTi refractory medium 
+entropy alloys with good room-temperature mechanical properties and high- 
+temperature oxidation resistance. J Alloys Compd 2023;932:167675. https://doi. 
+org/10.1016/j.jallcom.2022.167675.
+[44] Agustianingrum MP, Lee U, Park N. High-temperature oxidation behaviour of 
+CoCrNi medium-entropy alloy. Corrosion Sci 2020;173:108755. https://doi.org/ 
+10.1016/j.corsci.2020.108755.
+[45] Huang D, Lu J, Zhuang Y, Tian C, Li Y. The role of Nb on the high temperature 
+oxidation behavior of CoCrFeMnNbxNi high-entropy alloys. Corrosion Sci 2019; 
+158. https://doi.org/10.1016/j.corsci.2019.07.012.
+[46] Butler TM, Senkov ON, Daboiku TI, Velez MA, Schroader HE, Ware LG, Titus MS. 
+Oxidation behaviors of CrNb, CrNbTi, and CrNbTaTi concentrated refractory 
+alloys. Intermetallics 2022;140. https://doi.org/10.1016/j.intermet.2021.107374.
+[47] Ren W, Ouyang F, Ding B, Zhong Y, Yu J, Ren Z, Zhou L. The influence of CrTaO4 
+layer on the oxidation behavior of a directionally-solidified nickel-based superalloy 
+at 850–900 ◦C. J. Alloy. Compd 2017;724:565–74. https://doi.org/10.1016/j. 
+jallcom.2017.07.066.
+[48] Fan Z, Niu B, Wang Q, Sha J, Dong C. Effects of Si variation and Zr addition on the 
+microstructure, oxidation resistance and mechanical property at 1523 K of Nb-Si- 
+Ti/Zr/Hf-Cr/Al high-entropy superalloys. J. Alloy. Compd 2023;945. https://doi. 
+org/10.1016/j.jallcom.2023.169304.
+[49] Du Y, Ding D, Lai L, Xiao S, Guo N, Song B, Guo S. Effect of Y on the high- 
+temperature oxidation behavior of CrMoTaTi refractory high entropy alloy. Int J 
+Refract Metals Hard Mater 2022;103. https://doi.org/10.1016/j. 
+ijrmhm.2021.105755.
+[50] Jia B, Xu W, Liu X, Ji L, Li J, Sun C, Li H. Element diffusion behaviors at high 
+temperature and their effects on microstructure and tribological properties of 
+Cr2O3 films. Appl Surf Sci 2023;613. https://doi.org/10.1016/j. 
+apsusc.2022.155993.
+[51] Jia G, Xu W, Ouyang M, Wang H, Wang L, Xiao X. Oxidation behavior of Ni-25Cr- 
+10Fe-3Si-χNb alloys at 1000 ◦C in ambient air: role of Laves phase. Corrosion Sci 
+2021;187. https://doi.org/10.1016/j.corsci.2021.109475.
+[52] Grewal HS, Sanjiv RM, Arora HS, Kumar R, Ayyagari A, Mukherjee S, Singh H. 
+Activation energy and high temperature oxidation behavior of multi-principal 
+element alloy. Adv Eng Mater 2017;19. https://doi.org/10.1002/ 
+adem.201700182.
+[53] Tsai M-H, Yeh J-W. High-entropy alloys: a critical review. Materials Research 
+Letters 2014;2:107–23. https://doi.org/10.1080/21663831.2014.912690.
+H. Yi et al.                                                                                                                                                                                                                                       
+Journal of Materials Research and Technology 33 (2024) 9405–9414 
+9414
