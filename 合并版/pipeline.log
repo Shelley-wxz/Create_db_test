@@ -1,0 +1,102 @@
+2026-08-12 11:14:03 [INFO] Validating environment...
+2026-08-12 11:14:03 [INFO]   Environment validation passed.
+2026-08-12 11:14:03 [INFO] 
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO] HEA Paper Processing Pipeline
+2026-08-12 11:14:03 [INFO] Working directory: /Users/shelley/Desktop/AI4material/all
+2026-08-12 11:14:03 [INFO] Steps to run: [1, 2, 3, 4, 5, 6, 7, 8]
+2026-08-12 11:14:03 [INFO] Force mode: False
+2026-08-12 11:14:03 [INFO] Resume mode: False
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO] 
+2026-08-12 11:14:03 [INFO] --- Group 1 (Downloads): Steps [1, 2, 3] ---
+2026-08-12 11:14:03 [INFO]   Parallel steps (running concurrently):
+2026-08-12 11:14:03 [INFO] 
+2026-08-12 11:14:03 [INFO] 
+2026-08-12 11:14:03 [INFO] 
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO] Step 1: Download RSC PDFs (source=rsc)
+2026-08-12 11:14:03 [INFO] Step 2: Download Springer PDFs (source=springer)
+2026-08-12 11:14:03 [INFO] Step 3: Download Elsevier XMLs (source=elsevier)
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO] ============================================================
+2026-08-12 11:14:03 [INFO]   Output directory: /Users/shelley/Desktop/AI4material/all/rsc
+2026-08-12 11:14:03 [INFO]   Output directory: /Users/shelley/Desktop/AI4material/all/springer
+2026-08-12 11:14:03 [INFO]   Output directory: /Users/shelley/Desktop/AI4material/all/elsevier
+2026-08-12 11:14:03 [INFO]   Running: downloaders/download_rsc.py
+2026-08-12 11:14:03 [INFO]   Running: downloaders/download_springer.py
+2026-08-12 11:14:03 [INFO]   Timeout: 6.0 hours
+2026-08-12 11:14:03 [INFO]   Running: downloaders/download_elsevier.py
+2026-08-12 11:14:03 [INFO]   Timeout: 6.0 hours
+2026-08-12 11:14:03 [INFO]   Timeout: 6.0 hours
+2026-08-12 11:14:06 [INFO]   Step 3 completed successfully!
+2026-08-12 11:14:08 [INFO]   Step 1 completed successfully!
+2026-08-12 11:15:29 [INFO]   Step 2 completed successfully!
+2026-08-12 11:15:29 [INFO] --- Group 2 (Processing): Steps [4, 5] ---
+2026-08-12 11:15:29 [INFO]   Parallel steps (running concurrently):
+2026-08-12 11:15:29 [INFO] 
+2026-08-12 11:15:29 [INFO] 
+2026-08-12 11:15:29 [INFO] ============================================================
+2026-08-12 11:15:29 [INFO] ============================================================
+2026-08-12 11:15:29 [INFO] Step 4: Convert PDFs to Markdown (RSC + Springer)
+2026-08-12 11:15:29 [INFO] Step 5: Extract text from Elsevier XMLs
+2026-08-12 11:15:29 [INFO] ============================================================
+2026-08-12 11:15:29 [INFO] ============================================================
+2026-08-12 11:15:29 [INFO]   Output directory: /Users/shelley/Desktop/AI4material/all/rsc-spr-mds
+2026-08-12 11:15:29 [INFO]   Output directory: /Users/shelley/Desktop/AI4material/all/elsevier_txt
+2026-08-12 11:15:29 [INFO]   Running: processors/pdf_to_md.py
+2026-08-12 11:15:29 [INFO]   Timeout: 12.0 hours
+2026-08-12 11:15:29 [INFO]   Running: processors/xml_extractor2.py
+2026-08-12 11:15:29 [INFO]   Timeout: 6.0 hours
+2026-08-12 11:15:29 [INFO]   Step 5 completed successfully!
+2026-08-12 11:15:55 [INFO]   Step 4 completed successfully!
+2026-08-12 11:15:55 [INFO] --- Group 3 (Final): Steps [6] ---
+2026-08-12 11:15:55 [INFO]   Sequential step:
+2026-08-12 11:15:55 [INFO] 
+2026-08-12 11:15:55 [INFO] ============================================================
+2026-08-12 11:15:55 [INFO] Step 6: Run LLM multi-prompt analysis on papers
+2026-08-12 11:15:55 [INFO] ============================================================
+2026-08-12 11:15:55 [INFO]   Running: final/ds_mult_prompts.py
+2026-08-12 11:15:55 [INFO]   Timeout: unlimited
+2026-08-12 11:22:42 [INFO]   Step 6 completed successfully!
+2026-08-12 11:22:42 [INFO] --- Phase 4: Steps [7] ---
+2026-08-12 11:22:42 [INFO]   Sequential step:
+2026-08-12 11:22:42 [INFO] 
+2026-08-12 11:22:42 [INFO] ============================================================
+2026-08-12 11:22:42 [INFO] Step 7: Merge metadata with LLM results
+2026-08-12 11:22:42 [INFO] ============================================================
+2026-08-12 11:22:42 [INFO]   Running: final/merge_metadata_and_results.py
+2026-08-12 11:22:42 [INFO]   Timeout: 2.0 hours
+2026-08-12 11:22:43 [INFO]   Step 7 completed successfully!
+2026-08-12 11:22:43 [INFO] --- Phase 5: Steps [8] ---
+2026-08-12 11:22:43 [INFO]   Sequential step:
+2026-08-12 11:22:43 [INFO] 
+2026-08-12 11:22:43 [INFO] ============================================================
+2026-08-12 11:22:43 [INFO] Step 8: Generate final comprehensive CSV (final_db_HEAs.csv)
+2026-08-12 11:22:43 [INFO] ============================================================
+2026-08-12 11:22:43 [INFO]   Running: final/comprehensive_dict2csv.py
+2026-08-12 11:22:43 [INFO]   Timeout: 2.0 hours
+2026-08-12 11:22:44 [INFO]   Step 8 completed successfully!
+2026-08-12 11:22:44 [INFO] 
+2026-08-12 11:22:44 [INFO] ============================================================
+2026-08-12 11:22:44 [INFO] Pipeline completed successfully!
+2026-08-12 11:22:44 [INFO] ============================================================
+2026-08-12 11:22:44 [INFO] 
+2026-08-12 11:22:44 [INFO] Generated files:
+2026-08-12 11:22:44 [INFO]   database_HEA.csv (0.0 MB)
+2026-08-12 11:22:44 [INFO]   database_of_all_prompts.csv (0.2 MB)
+2026-08-12 11:22:44 [INFO]   database_of_raw_responses.csv (0.2 MB)
+2026-08-12 11:22:44 [INFO]   db_HEAs.csv (0.0 MB)
+2026-08-12 11:22:44 [INFO]   downloaders/ (4 files)
+2026-08-12 11:22:44 [INFO]   elsevier/ (1 files)
+2026-08-12 11:22:44 [INFO]   elsevier_txt/ (1 files)
+2026-08-12 11:22:44 [INFO]   final/ (5 files)
+2026-08-12 11:22:44 [INFO]   final_db_HEAs.csv (0.0 MB)
+2026-08-12 11:22:44 [INFO]   pipeline.log (0.0 MB)
+2026-08-12 11:22:44 [INFO]   processors/ (3 files)
+2026-08-12 11:22:44 [INFO]   rsc/ (2 files)
+2026-08-12 11:22:44 [INFO]   rsc-spr-mds/ (6 files)
+2026-08-12 11:22:44 [INFO]   springer/ (4 files)
