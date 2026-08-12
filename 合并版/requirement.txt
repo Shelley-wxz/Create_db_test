@@ -1,0 +1,18 @@
+# 核心数据处理与表格操作
+pandas>=1.5.0
+numpy>=1.24.0
+
+# 网络请求与爬虫基础
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+lxml>=4.9.0
+
+# PDF 与文档解析
+PyMuPDF>=1.22.0
+
+# 大语言模型 (LLM) 交互
+openai>=1.0.0
+
+# 辅助工具
+python-dotenv>=1.0.0
+tqdm>=4.65.0
