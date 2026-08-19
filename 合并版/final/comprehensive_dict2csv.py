@@ -1,9 +1,9 @@
-
 import json
 import re
 import csv
 from json import JSONDecodeError
 import pandas as pd
+from json_repair import repair_json
 
 
 def extract_phase_from_details(structure: str, details: str, phase_type: str) -> str:
@@ -120,7 +120,7 @@ def cd_to_csv(output_file: str, papers_names: list, names_list: list,  papers_js
     Returns:
         Writes data to output2.csv
     """
-    with open(output_file, 'w', newline='') as csvfile:
+    with open(output_file, 'w', newline='',encoding='utf-8-sig') as csvfile:
         writer = csv.writer(csvfile)
         headers = [
             'id', 'Paper', 'Name', 'Alloy', 'Nb of phase', 'Phase',
@@ -146,7 +146,16 @@ def cd_to_csv(output_file: str, papers_names: list, names_list: list,  papers_js
                 data = json.loads(json_data)
             except JSONDecodeError as e:
                 print(f"json decode error for paper {papers_names[i]}: {e}")
-                continue
+                try:
+                    repaired = repair_json(json_data)
+                    data = json.loads(repaired)
+                    print(f"  -> 已通过 json_repair 修复，继续处理")
+                except Exception as repair_err:
+                    print(f"  -> json_repair 也无法修复: {repair_err}")
+                    # 打印出错行附近内容
+                    ...
+                    skipped.append(papers_names[i])
+                    continue
 
             # Iterate over each alloy in the data
             for alloy_key, alloy_data in data.items():

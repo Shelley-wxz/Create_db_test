@@ -18,7 +18,7 @@ client = OpenAI(
 )
 
 def walk_through_papers(scientific_papers: list, filename: str):
-    with open(filename, 'w') as csvfile:
+    with open(filename, 'w', encoding='utf-8-sig') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(["article", "pdf_url", "prompt1", "prompt2", "prompt3", "prompt4", "prompt5", "context_missread_bug"])
         count = 0

@@ -1,10 +1,8 @@
-
 import json
 import csv
 from json import JSONDecodeError
 import pandas as pd
-
-
+from json_repair import repair_json
 def _build_detail(details_dict):
     """从 dict 中提取 method 和 parameters，构建详情字符串。"""
     if not details_dict:
@@ -29,7 +27,7 @@ def cd_to_csv(papers_names: list, papers_jsons: list) -> None:
     Returns:
         Writes data to db_HEAs.csv
     """
-    with open('db_HEAs.csv', 'w', newline='') as csvfile:
+    with open('db_HEAs.csv', 'w', newline='', encoding='utf-8-sig') as csvfile:
         writer = csv.writer(csvfile)
         headers = [
             'id', 'Paper', "Name", 'Alloy', 'Nb of phase', 'Phase',
@@ -51,7 +49,16 @@ def cd_to_csv(papers_names: list, papers_jsons: list) -> None:
                 data = json.loads(json_data)
             except JSONDecodeError as e:
                 print(f"json decode error for paper {papers_names[i]}: {e}")
-                continue
+                try:
+                    repaired = repair_json(json_data)
+                    data = json.loads(repaired)
+                    print(f"  -> 已通过 json_repair 修复，继续处理")
+                except Exception as repair_err:
+                    print(f"  -> json_repair 也无法修复: {repair_err}")
+                    # 打印出错行附近内容
+                    ...
+                    skipped.append(papers_names[i])
+                    continue
 
             # Iterate over each alloy in the data
             for alloy_key, alloy_data in data.items():
@@ -167,7 +174,6 @@ def cd_to_csv(papers_names: list, papers_jsons: list) -> None:
 
         print("Data has been successfully written to 'db_HEAs.csv'")
 
-
 if __name__ == "__main__":
     df = pd.read_csv('database_of_all_prompts.csv')
 
@@ -211,7 +217,7 @@ if __name__ == "__main__":
     merged_df['article'] = merged_df['article'].str.replace('10.1039-', '', regex=False)
     merged_df['pdf_url'] = merged_df['pdf_url'].str.replace('10.1039-', '', regex=False)
 
-    merged_df.to_csv("database_of_raw_responses.csv")
+    merged_df.to_csv("database_of_raw_responses.csv",encoding='utf-8-sig')
 
     # Process the files and print the titles
     cd_to_csv(papers_names=list(papers_names), papers_jsons=list(merged_df["prompt5"]))

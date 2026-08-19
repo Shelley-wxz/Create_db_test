@@ -16,3 +16,7 @@ openai>=1.0.0
 # 辅助工具
 python-dotenv>=1.0.0
 tqdm>=4.65.0
+
+# JSON 修复库：用于自动修复 LLM 生成的非法 JSON 字符串（如缺少逗号、多余逗号等语法错误）
+# 当 json.loads 解析失败时，通过 repair_json() 尝试修复后重新解析，避免跳过论文数据
+json_repair==0.50.1
