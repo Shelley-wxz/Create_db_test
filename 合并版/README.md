@@ -98,7 +98,7 @@ pipeline_root/
 ### Python 包
 
 ```bash
-pip install requests pandas openpyxl lxml PyPDF2 llama-parse llama-index-core
+pip install requests pandas openpyxl lxml PyPDF2 
 pip install pymupdf          # xml_extractor2.py 需要（用于 PDF 格式 fallback）
 ```
 

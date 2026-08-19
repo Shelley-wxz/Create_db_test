@@ -3,13 +3,29 @@ import csv
 from json import JSONDecodeError
 import pandas as pd
 
+def _build_detail(details_dict):
+    """从 dict 中提取 method 和 parameters，构建详情字符串。"""
+    if not details_dict:
+        return 'N/A'
+    method = details_dict.get('method', '') or ''
+    parameters = details_dict.get('parameters', {}) or {}
+    detail_parts = [method] if method else []
+    if isinstance(parameters, dict):
+        for k, v in parameters.items():
+            param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
+            detail_parts.append(param_str)
+    else:
+        if parameters:
+            detail_parts.append(str(parameters))
+    return ', '.join(detail_parts) if detail_parts else 'N/A'
+
 
 def cd_to_csv(papers_names: list, papers_jsons: list) -> None:
     """
     Args:
         papers_jsons: list of responses from LLM (each response contains a ```json block)
     Returns:
-        Writes data to output2.csv
+        Writes data to db_HEAs.csv
     """
     with open('db_HEAs.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -48,7 +64,6 @@ def cd_to_csv(papers_names: list, papers_jsons: list) -> None:
                 crystallographic_phases = alloy_data.get('crystallographic_phases', [])
 
                 if len(crystallographic_phases) == 0:
-                    # print(alloy_data)
                     crystallographic_phases = alloy_data.get('phases', [])
 
                 nb_of_phase = len(crystallographic_phases)
@@ -83,99 +98,60 @@ def cd_to_csv(papers_names: list, papers_jsons: list) -> None:
                 experimental_details = 'N/A'
                 theoretical_details = 'N/A'
 
-                # Check for synthesis_or_calculation hui
+                # Check for synthesis_or_calculation
                 synthesis = alloy_data.get('synthesis_or_calculation', None)
                 if synthesis:
-                    exp_or_theo = synthesis.get('type', 'N/A')  # .capitalize()
-                    method = synthesis.get('method', '')
-                    if method or parameters:
-                        parameters = synthesis.get('parameters', {})
-                        detail_parts = [method] if method else []
-                        if isinstance(parameters, dict):
-                            for k, v in parameters.items():
-                                param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                detail_parts.append(param_str)
-                        else:
-                            param_str = parameters
-                        if detail_parts:
-                            experimental_details = ', '.join(detail_parts)
-                    if exp_or_theo in ['experimental', 'theoretical and experimental', "combination", "both"]:
-                        experimental = synthesis.get('experimental_details', {})
-                        if experimental:
-                            method = experimental.get('method', '')
-                            parameters = experimental.get('parameters', {})
-                            detail_parts = [method] if method else []
-                            if isinstance(parameters, dict):
-                                for k, v in parameters.items():
-                                    param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                    detail_parts.append(param_str)
-                            else:
-                                detail_parts.append(str(parameters))
-                            if detail_parts:
-                                experimental_details = ', '.join(detail_parts)
-                        else:
-                            syn_details = alloy_data.get('synthesis_details', {})
-                            method = syn_details.get('method', '')
-                            parameters = syn_details.get('parameters', {})
-                            if method or parameters:
-                                exp_or_theo = 'experimental'
-                            detail_parts = [method] if method else []
-                            if isinstance(parameters, dict):
-                                for k, v in parameters.items():
-                                    param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                    detail_parts.append(param_str)
-                            else:
-                                param_str = parameters
-                            if detail_parts:
-                                experimental_details = ', '.join(detail_parts)
-                            # print(exp_or_theo+" + "+experimental_details)
+                    raw_type = synthesis.get('type', 'N/A')
+                    # 统一小写比较，修复大小写不匹配问题
+                    exp_or_theo_lower = raw_type.lower() if raw_type else 'n/a'
+                    exp_or_theo = raw_type if raw_type else 'N/A'
 
-                    if exp_or_theo in ['theoretical', 'theoretical and experimental', "combination", "both"]:
-                        # Extract Theoretical Details
-                        theoretical = synthesis.get('theoretical_details', {})
-                        if theoretical:
-                            method = theoretical.get('method', '')
-                            parameters = theoretical.get('parameters', {})
-                            detail_parts = [method] if method else []
-                            if isinstance(parameters, dict):
-                                for k, v in parameters.items():
-                                    param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                    detail_parts.append(param_str)
-                            else:
-                                detail_parts.append(str(parameters))
-                            if detail_parts:
-                                theoretical_details = ', '.join(detail_parts)
-                        else:
-                            syn_details = alloy_data.get('synthesis_details', {})
-                            method = syn_details.get('method', '')
-                            parameters = syn_details.get('parameters', {})
-                            if method or parameters:
-                                exp_or_theo = 'experimental'
-                                detail_parts = [method] if method else []
-                                if isinstance(parameters, dict):
-                                    for k, v in parameters.items():
-                                        param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                        detail_parts.append(param_str)
-                                else:
-                                    detail_parts.append(str(parameters))
-                                if detail_parts:
-                                    experimental_details = ', '.join(detail_parts)
+                    is_exp = exp_or_theo_lower in ['experimental', 'theoretical and experimental', 'combination', 'both']
+                    is_theo = exp_or_theo_lower in ['theoretical', 'theoretical and experimental', 'combination', 'both']
+
+                    if is_exp:
+                        # 从 synthesis 自身的 method + parameters 构建 experimental details
+                        experimental_details = _build_detail({
+                            'method': synthesis.get('method', ''),
+                            'parameters': synthesis.get('parameters', {})
+                        })
+                        # 如果是 combination/both 类型，且 synthesis 内部有 experimental 子键，优先使用
+                        if exp_or_theo_lower in ['combination', 'both', 'theoretical and experimental']:
+                            exp_sub = synthesis.get('experimental', {})
+                            if exp_sub:
+                                experimental_details = _build_detail(exp_sub)
+
+                    if is_theo:
+                        # 从 synthesis 自身的 method + parameters 构建 theoretical details
+                        theoretical_details = _build_detail({
+                            'method': synthesis.get('method', ''),
+                            'parameters': synthesis.get('parameters', {})
+                        })
+                        # 如果是 combination/both 类型，且 synthesis 内部有 theoretical 子键，优先使用
+                        if exp_or_theo_lower in ['combination', 'both', 'theoretical and experimental']:
+                            theo_sub = synthesis.get('theoretical', {})
+                            if theo_sub:
+                                theoretical_details = _build_detail(theo_sub)
+                        # 也检查 alloy 级别的 theoretical_details（作为补充）
+                        theo_alloy = alloy_data.get('theoretical_details', {})
+                        if theo_alloy and theoretical_details == 'N/A':
+                            theoretical_details = _build_detail(theo_alloy)
+
+                    # combination / both / theoretical and experimental: 两个列都有相同数据
+                    if exp_or_theo_lower in ['combination', 'both', 'theoretical and experimental']:
+                        combined = experimental_details
+                        if theoretical_details != 'N/A' and theoretical_details != experimental_details:
+                            combined = f"{experimental_details}; {theoretical_details}"
+                        experimental_details = combined
+                        theoretical_details = combined
                 else:
-                    # Check for synthesis_details instead
+                    # 没有 synthesis_or_calculation，检查 synthesis_details
                     syn_details = alloy_data.get('synthesis_details', {})
-                    method = syn_details.get('method', '')
-                    parameters = syn_details.get('parameters', {})
-                    if method:
-                        exp_or_theo = 'Experimental'
-                    detail_parts = [method] if method else []
-                    if isinstance(parameters, dict):
-                        for k, v in parameters.items():
-                            param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                            detail_parts.append(param_str)
-                    else:
-                        param_str = parameters
-                    if detail_parts:
-                        experimental_details = ', '.join(detail_parts)
+                    if syn_details:
+                        method = syn_details.get('method', '')
+                        if method:
+                            exp_or_theo = 'Experimental'
+                        experimental_details = _build_detail(syn_details)
 
                 special_conditions = alloy_data.get('special_conditions', 'N/A')
                 type_of_solution = alloy_data.get('phase_classification', 'N/A')
@@ -202,12 +178,9 @@ if __name__ == "__main__":
     #     temp = pd.read_csv(f'{batch}')
     #     df = pd.concat([df, temp], ignore_index=True)
 
-
     # for i in range(2, 11):
     #     temp = pd.read_csv(f'result_multiple_prompts-batch-mds-1127-{i}.csv')
     #     df = pd.concat([df, temp], ignore_index=True)
-
-
 
     df = df.loc[df["context_missread_bug"] == True].reset_index(drop=True)
     # 修复：链式替换，每一步基于上一步的结果
@@ -217,7 +190,6 @@ if __name__ == "__main__":
         .str.replace('parsed_output-', '')
         .str.replace('.pdf.md', '')
         .str.replace('10.1039-', '')
-
     )
 
     metadata = pd.read_csv("database_HEA.csv")
@@ -236,9 +208,7 @@ if __name__ == "__main__":
     merged_df['article'] = merged_df['article'].str.replace('10.1039-', '', regex=False)
     merged_df['pdf_url'] = merged_df['pdf_url'].str.replace('10.1039-', '', regex=False)
 
-
     merged_df.to_csv("database_of_raw_responses.csv")
-
 
     # Process the files and print the titles
     cd_to_csv(papers_names=list(papers_names), papers_jsons=list(merged_df["prompt5"]))

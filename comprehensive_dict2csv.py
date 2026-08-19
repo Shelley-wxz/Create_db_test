@@ -1,3 +1,4 @@
+
 import json
 import re
 import csv
@@ -8,22 +9,12 @@ import pandas as pd
 def extract_phase_from_details(structure: str, details: str, phase_type: str) -> str:
     """
     Extract phase information from structure and details fields.
-    
-    Args:
-        structure: Base crystal structure
-        details: Detailed phase information
-        phase_type: Type of phase (e.g., intermetallic)
-    
-    Returns:
-        str: Formatted phase description
     """
-    # First convert basic structure names
     base_structure = structure
     structure_lower = structure.lower()
     structure_mapping = {
         'body-centered cubic': 'BCC',
         'face-centered cubic': 'FCC',
-        #'hexagonal close-packed': 'HCP',
         'body-centered tetragonal': 'BCT',
         'hexagonal': 'HCP'
     }
@@ -36,11 +27,9 @@ def extract_phase_from_details(structure: str, details: str, phase_type: str) ->
     if not details:
         return base_structure
     
-    # Check for specific phases in details
     details = details.lower()
     phase_str = base_structure
     
-    # Special phase indicators
     special_phases = {
         'a2': 'A2',
         'b2': 'B2',
@@ -57,17 +46,9 @@ def extract_phase_from_details(structure: str, details: str, phase_type: str) ->
         'amorphous': 'Amorphous'
     }
     
-    # Check for numbered variants (BCC1, BCC2, etc.)
-    # if any(char.isdigit() for char in details):
-    #     for i in range(1, 10):  # Check numbers 1-9
-    #         if str(i) in details:
-    #             phase_str = f"{base_structure}{i}"
-    #             break
-    
-    # Check for special phases
     for key, value in special_phases.items():
         if (key in details.lower()) and (key not in structure_lower) and (key not in phase_str.lower()):
-            if phase_str == base_structure:  # If we haven't modified the base structure yet
+            if phase_str == base_structure:
                 phase_str += (" "+value) 
             else:
                 if key in ["a2", "b2", "l12", "c14", "c15", "laves"]:
@@ -75,12 +56,11 @@ def extract_phase_from_details(structure: str, details: str, phase_type: str) ->
                 else:
                     phase_str += f" + {value}"
     
-    # Check for oxides and other compounds
     oxide_patterns = [
-        r'cro\d+',  # Match CrO3, CrO4, etc.
-        r'al2o3',   # Match Al2O3
-        r'(co-fe)7w6',  # Match (Co-Fe)7W6
-        r'alni'     # Match AlNi
+        r'cro\d+',
+        r'al2o3',
+        r'(co-fe)7w6',
+        r'alni'
     ]
     
     for pattern in oxide_patterns:
@@ -97,19 +77,37 @@ def extract_phase_from_details(structure: str, details: str, phase_type: str) ->
                 compound = 'AlNi'
             phase_str += f" + {compound}"
     
-    # Handle martensite
     if 'martensite' in details.lower():
         phase_str += ' martensite'
     
-    # Handle specific element groupings
     if 'tivzr' in details.lower() and 'taw' in details.lower():
         phase_str += ' (TiVZr + TaW)'
     
-    # Add intermetallic designation if needed
     if phase_type.lower() == 'intermetallic' and 'laves' not in phase_str.lower():
         phase_str += ' (Intermetallic)'
     
     return phase_str
+
+
+def _build_detail(method, parameters) -> str:
+    """
+    Build a detail string from method and parameters dict.
+    Returns 'N/A' if both are empty/None.
+    """
+    if not method and not parameters:
+        return 'N/A'
+    
+    detail_parts = []
+    if method:
+        detail_parts.append(f"Method: {method}")
+    if isinstance(parameters, dict):
+        for k, v in parameters.items():
+            param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
+            detail_parts.append(param_str)
+    elif parameters:
+        detail_parts.append(str(parameters))
+    
+    return ', '.join(detail_parts) if detail_parts else 'N/A'
 
 
 def cd_to_csv(output_file: str, papers_names: list, names_list: list,  papers_jsons: list) -> None:
@@ -192,8 +190,8 @@ def cd_to_csv(output_file: str, papers_names: list, names_list: list,  papers_js
                         else:
                             continue
                         
-
-                nb_of_phase = phase_str.count("+") + 1 # len(crystalographic_phases)
+                    
+                nb_of_phase = phase_str.count("+") + 1
 
                 for structure in ["BCC", "FCC", "HCP"]:
                     if structure in phase_str:
@@ -209,112 +207,57 @@ def cd_to_csv(output_file: str, papers_names: list, names_list: list,  papers_js
                 else:
                     type_of_solution = alloy_data.get('phase_classification', 'N/A')
 
-                # Determine if it's experimental, theoretical, or both
+                # === Determine if it's experimental, theoretical, or both ===
                 exp_or_theo = 'N/A'
                 experimental_details = 'N/A'
                 theoretical_details = 'N/A'
 
-                # Check for synthesis_or_calculation hui
                 synthesis = alloy_data.get('synthesis_or_calculation', None)
                 if synthesis:
-                    exp_or_theo = synthesis.get('type', 'N/A')# .capitalize()
-                    method = synthesis.get('method', '')
-                    if method or parameters:
-                        parameters = synthesis.get('parameters', {})
-                        detail_parts = [method] if method else []
-                        if isinstance(parameters, dict):
-                            for k, v in parameters.items():
-                                param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                detail_parts.append(param_str)
+                    raw_type = synthesis.get('type', 'N/A')
+                    exp_or_theo = raw_type if raw_type else 'N/A'
+                    exp_or_theo_lower = exp_or_theo.lower()
+                    
+                    # Build detail string from synthesis level method+parameters
+                    synth_method = synthesis.get('method') or ''
+                    synth_params = synthesis.get('parameters') or {}
+                    synth_detail = _build_detail(synth_method, synth_params)
+                    
+                    if exp_or_theo_lower == 'experimental':
+                        # Experimental: experimental details has data, theoretical is N/A
+                        experimental_details = synth_detail
+                        theoretical_details = 'N/A'
+                        
+                    elif exp_or_theo_lower == 'theoretical':
+                        # Theoretical: theoretical details has data, experimental is N/A
+                        experimental_details = 'N/A'
+                        theoretical_details = synth_detail
+                        
+                    elif exp_or_theo_lower in ['both', 'combination', 'theoretical and experimental']:
+                        # Combination/both: both columns have the same data
+                        # For "both" type, also try reading from nested experimental/theoretical keys
+                        if synth_detail != 'N/A':
+                            combined_detail = synth_detail
                         else:
-                            param_str = parameters
-                        if detail_parts:
-                            try:
-                                experimental_details = ', '.join(detail_parts)
-                            except TypeError:
-                                dp = []
-                                for a in detail_parts:
-                                    dp.append(str(a))
-                                experimental_details = ', '.join(dp)
-
-                    if exp_or_theo in ['experimental', 'theoretical and experimental', "combination","both"]:
-                        experimental = synthesis.get('experimental_details', {})
-                        if experimental:
-                            method = experimental.get('method', '')
-                            parameters = experimental.get('parameters', {})
-                            detail_parts = [method] if method else []
-                            if isinstance(parameters, dict):
-                                for k, v in parameters.items():
-                                    param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                    detail_parts.append(param_str)
+                            # Try nested experimental key
+                            exp_sub = synthesis.get('experimental', {})
+                            if exp_sub:
+                                exp_method = exp_sub.get('method') or ''
+                                exp_params = exp_sub.get('parameters') or {}
+                                combined_detail = _build_detail(exp_method, exp_params)
                             else:
-                                detail_parts.append(str(parameters))
-                            if detail_parts:
-                                experimental_details = ', '.join(detail_parts)
-                        else:
-                            syn_details = alloy_data.get('synthesis_details', {})
-                            method = syn_details.get('method', '')
-                            parameters = syn_details.get('parameters', {})
-                            if method or parameters:
-                                exp_or_theo = 'experimental'
-                            detail_parts = [method] if method else []
-                            if isinstance(parameters, dict):
-                                for k, v in parameters.items():
-                                    param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                    detail_parts.append(param_str)
-                            else:
-                                param_str = parameters
-                            if detail_parts:
-                                experimental_details = ', '.join(detail_parts)
-                            # print(exp_or_theo+" + "+experimental_details)
-                            
-                    if exp_or_theo in ['theoretical', 'theoretical and experimental', "combination", "both"]:
-                        # Extract Theoretical Details
-                        theoretical = synthesis.get('theoretical_details', {})
-                        if theoretical:
-                            method = theoretical.get('method', '')
-                            parameters = theoretical.get('parameters', {})
-                            detail_parts = [method] if method else []
-                            if isinstance(parameters, dict):
-                                for k, v in parameters.items():
-                                    param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                    detail_parts.append(param_str)
-                            else:
-                                detail_parts.append(str(parameters))
-                            if detail_parts:
-                                theoretical_details = ', '.join(detail_parts)
-                        else:
-                            syn_details = alloy_data.get('synthesis_details', {})
-                            method = syn_details.get('method', '')
-                            parameters = syn_details.get('parameters', {})
-                            if method or parameters:
-                                exp_or_theo = 'experimental'
-                                detail_parts = [method] if method else []
-                                if isinstance(parameters, dict):
-                                    for k, v in parameters.items():
-                                        param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                                        detail_parts.append(param_str)
-                                else:
-                                    detail_parts.append(str(parameters))
-                                if detail_parts:
-                                    experimental_details = ', '.join(detail_parts)
+                                combined_detail = synth_detail
+                        
+                        experimental_details = combined_detail
+                        theoretical_details = combined_detail
                 else:
-                    # Check for synthesis_details instead
+                    # No synthesis_or_calculation, try synthesis_details
                     syn_details = alloy_data.get('synthesis_details', {})
                     method = syn_details.get('method', '')
                     parameters = syn_details.get('parameters', {})
-                    if method:
-                        exp_or_theo = 'Experimental'
-                    detail_parts = [method] if method else []
-                    if isinstance(parameters, dict):
-                        for k, v in parameters.items():
-                            param_str = f"{k.replace('_', ' ').capitalize()}: {v}"
-                            detail_parts.append(param_str)
-                    else:
-                        param_str = parameters
-                    if detail_parts:
-                        experimental_details = ', '.join(detail_parts)
-
+                    detail = _build_detail(method, parameters)
+                    if detail != 'N/A':
+                        experimental_details = detail
 
                 special_conditions = alloy_data.get('special_conditions', 'N/A')
 
@@ -329,15 +272,10 @@ def cd_to_csv(output_file: str, papers_names: list, names_list: list,  papers_js
 
 
 if __name__ == "__main__":
-    # This block remains as in your original code. Adjust the CSV input or filtering as needed.
-    # df = pd.read_csv('/Users/vdc/result_multiple_prompts-batch-mds-1127-1.csv')#~/Downloads/esult_multiple_prompts-batch-mds-1127-1.csv')
     df = pd.read_csv('database_of_raw_responses.csv')
-    # df = pd.read_csv('/Users/vdc/jamba-1022.csv')# hea_llm_rag/shaping results/new-test-sample.csv')#
-    # df = df.loc[df["context_missread_bug"] == True]
-    # df = pd.read_csv('/Users/vdc/Downloads/deepseek-r1_results_right_dois_reordered.csv')
     cd_to_csv(
         output_file="final_db_HEAs.csv",
-        papers_names=list(df["pdf_url"]),   # 论文URL
-        names_list=list(df["article"]),     # 论文标识符
-        papers_jsons=list(df["prompt5"]), # list(df["prompt5"]),
+        papers_names=list(df["pdf_url"]),
+        names_list=list(df["article"]),
+        papers_jsons=list(df["prompt5"]),
     )
